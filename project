@@ -22,7 +22,10 @@ while game == True :
     
     score = 0
     nscore = player[pep]
-    
+    altot = 0 #추가
+    alans = 0 #추가
+    tot = 0 # 추가
+    ans = 0 # 추가
     cho = input("이름 학습을 플레이하려면 1, 시대 학습을 플레이하려면 2를 입력해주세요.")
     
     if cho in "1, 2" :
@@ -46,6 +49,10 @@ while game == True :
                     print("정답입니다. +1")
                     score += 1
                     nscore += 1
+                    altot += 1 # 추가
+                    alans += 1 # 추가
+                    tot += 1 # 추가
+                    ans += 1 # 추가
                 else :
                     print("오답입니다. -1",  "( 답 :", play.split('_')[0], ")")
                     score -= 1
@@ -57,19 +64,27 @@ while game == True :
                     print("정답입니다. +1")
                     score += 1
                     nscore += 1
+                    altot += 1 # 추가
+                    alans += 1 # 추가
+                    tot += 1 # 추가
+                    ans += 1 # 추가
                 else :
                     print("오답입니다. -1",  "( 답 :", play.split('_')[1], ")")
                     score -= 1
                     nscore -= 1
+                     altot += 1 # 추가
+                    tot += 1 # 추가
                     pic.append(play)        
 
-        print("학습 완료. 당신의 점수는", score, "점 입니다.(누적 점수 :", nscore, ")")
+        print("학습 완료. 당신의 점수는", score, "점 입니다. 정답률은", thper, "% 입니다. (누적 점수 :", nscore, " 누적 정답률 :" ,alper, "% )") # 추가
         player[pep] = nscore
         
         new = input("새 게임을 시작하시겠습니까? 예 / 아니오")
         
         if new == '예' :
             game = True
+            tot = 0 # 추가
+            ans = 0 # 추가
             pic = ['갑주어_고생대_.PNG', '공룡_중생대_.PNG', '매머드_신생대_.PNG', '방추충_고생대_.PNG',
            '삼엽충_고생대_.PNG', '스트로마톨라이트_선캄브리아_.PNG', '암모나이트_중생대_.PNG', 
            '디킨소니아_선캄브리아_.PNG', '필석_고생대_.PNG', '화폐석_신생대_.PNG']
